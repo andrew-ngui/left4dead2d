@@ -1,0 +1,18 @@
+An itemized list of additional features:
+
+1)  gun with reload/ammo system
+2)  buildings (walk in)
+3)  destroyable obstacles
+4)  different terrain with different move speeds (acid) 
+5)  collision detection
+6)  shrinking play area
+7)  multiple types of AI (6 types of zombies)
+8)  gun upgradability with ammo/number of bullets
+9)  sound effects
+10) hud displaying game info
+11) images for player, enemies, hud, items
+12) mines and grenades
+13) healing item
+14) grappling hook for movement
+15) melee + animation
+16) minimap for zombies + player

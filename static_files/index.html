@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta HTTP-EQUIV="EXPIRES" CONTENT="-1">
+		<title>LEFT 4 DEAD 2D</title>
+
+		<script src="jquery-3.3.1.min.js"></script>
+
+		<script language="javascript" src="./model/stage.js"></script>
+		<script language="javascript" src="./model/actor.js"></script>
+		<script language="javascript" src="./model/mass.js"></script>
+		<script language="javascript" src="./model/item.js"></script>
+		<script language="javascript" src="./model/weapon.js"></script>
+		<script language="javascript" src="./model/player.js"></script>
+		<script language="javascript" src="./model/bullet.js"></script>
+		<script language="javascript" src="./model/rope.js"></script>
+		<script language="javascript" src="./model/grenade.js"></script>
+		<script language="javascript" src="./model/enemy.js"></script>
+		<script language="javascript" src="./model/hud.js"></script>
+		<script language="javascript" src="./model/zone.js"></script>
+		<script language="javascript" src="./model/gameController.js" > </script>
+		<script language="javascript" src="controller.js" > </script>
+		<link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+		<link href="./style.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="top_nav"></div>
+			<main>
+			<!-- <h1>LEFT 4 DEAD 2D</h1> -->
+			<div class="ui" id="ui_login">
+				<h2>Please Login</h2>
+				<br>
+				<form id="loginSubmit">
+					Username
+					<input type="text" class="input" id="user" />
+					Password
+					<input type="password" class="input" id="password" />
+					<input type="submit" class="button" value="Login">
+				</form>
+				<p id=result></p>
+
+			</div>
+
+			<div class="game" id="ui_game">
+				<canvas class="gameCanvas" id="stage" width="1280" height="720" style="border:1px solid black;"> </canvas>
+				<div class="gameMenu">
+					<div>
+						<button class="gameButton" id="gameButtonStart">START</button>
+					</div>
+					<br>
+					<div>
+						<button class="gameButton" id="gameButtonRestart">RESTART</button>
+					</div>
+					
+				</div>
+
+			</div>
+			<div class="ui" id="ui_register">
+				<form id="profileSubmit">
+				<div>
+					First Name*
+					<input type="text" class="input" id="first" size="25" 
+						pattern="[A-Za-z0-9]{1,20}"
+						title="Must contain no more than 20 alphanumeric characters" required>
+
+				</div>
+				<div>
+					Last Name*
+					<input type="text"  class="input" id="last" size="25"
+						pattern="[A-Za-z0-9]{1,20}"
+						title="Must contain no more than 20 alphanumeric characters" required>
+				</div>
+				<div>
+					Given Name
+					<input type="text" class="input" id="given" size="25"
+						pattern="[A-Za-z0-9]{0,20}"
+						title="Must contain no more than 20 alphanumeric characters">
+				</div>
+				<hr>
+				<div>
+				Gender*
+				<select class="input dropbox" id="gender" >
+					<option value=''  selected disabled hidden>Choose here</option>
+					<option value="1">M</option>
+					<option value="2">F</option>
+				</select>
+				</div>
+				<div>
+					DOB*
+					<input type="date" class="input" id="dob" required>
+				</div>
+				
+				<hr>
+				
+				<table><tr><td>
+					Year of Study*
+					<br>
+					<label><input type="radio" class="radio" name="yearofstudy" value="1">1</label>
+					<br>
+					<label><input type="radio" class="radio" name="yearofstudy" value="2">2</label>
+					<br>
+					<label><input type="radio" class="radio" name="yearofstudy" value="3">3</label>
+					<br>
+					<label><input type="radio" class="radio" name="yearofstudy" value="4">4</label>
+					<br>
+					<label><input type="radio" class="radio" name="yearofstudy" value="5">4+</label>
+				</td></tr></table>
+				<div id="account">
+						Username
+						<input type="text" class="input" id="userRegister"
+							pattern="[A-Za-z0-9]{8,20}"
+							title="Must contain 8-20 alphanumeric characters" required>
+					<div>
+						Password (8 characters minimum)
+						<input type="password" class="input" id="passwordRegister"
+							pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}"
+							title="Must contain at least one number and one uppercase and lowercase letter, and 8-20 characters"
+							value="" required>
+					</div>
+					<div>
+						Confirm Password
+						<input type="password" class="input" id="cpasswordRegister"
+							pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}"
+							title="Must contain at least one number and one uppercase and lowercase letter, and 8-20 characters"
+							value="" required>
+					</div>
+				</div>
+				</form>
+				<button form="profileSubmit" id="submit">Register</button>
+				<button id="delete">Clear</button>
+				<p id=result></p>
+			</div>
+			<div class="ui" id="ui_main">
+				<h2>Welcome</h2>
+				<br>
+				<h3>Leader Board</h3>
+				<table class="stat" id="leaderboard">
+					<tbody>
+						<tr>
+							<th>Username</th>
+							<th>Kills</th>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Personal Best</h3>
+				<table class="stat" id="personal">
+					<tbody>
+						<tr>
+							<th>Username</th>
+							<th>Kills</th>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</main>
+	</body>
+</html>
+
